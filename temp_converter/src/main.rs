@@ -7,10 +7,10 @@ fn main() {
 
         let mut temp_type = String::new();
 
-        io::stdin()
+        io::stdin()  // takes input from the user as string
             .read_line(&mut temp_type)
             .expect("Failed to read line");
-
+//  converting the string input to positive number 
         let temp_type: u8 = match temp_type.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
@@ -43,14 +43,14 @@ fn main() {
             };
             println!("{}", temp_converter(2, deg_num));
         } else {
-            println!("\nNo vaild option selected\n");
+            println!("\nNo vaild option selected\n");  // when there is no valid selected option
             continue 'input_check;
         }
 
         break;
     }
 }
-
+// the conversion function
 fn temp_converter(op: i8, deg: f64) -> f64 {
     if op == 1 {
         (deg - 32.0) / 1.8
